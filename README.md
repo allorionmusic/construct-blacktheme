@@ -2,8 +2,11 @@
   <img src="banner.png" alt="Banner" width="800">
 </p>
 
-> [!NOTE]
+>[!DISCLAIMER]
 > This Black Theme is a work in progress, it's NOT finished yet, so you might find some issues.
+> I plan on making it a plugin for the program (so you actually can use it with no issues).
+
+> [!NOTE]
 > All of our free software is designed to respect your privacy, while being as simple to use as possible. Our free software is licensed under the [BSD-3-Clause license](https://ravendevteam.org/files/BSD-3-Clause.txt). By using our software, you acknowledge and agree to the terms of the license.
 
 Simple, fast, and professional code editor.
