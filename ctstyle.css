@@ -1,0 +1,228 @@
+/*
+    Construct - Full Black Professional Theme
+*/
+
+/* Code Editor Area */
+QsciScintilla {
+    font-family: 'Cascadia Code', 'Courier New', Courier, monospace;
+    font-weight: 400;
+    font-size: 14px;
+    background-color: #000000;
+    color: #e0e0e0;
+    border: none;
+    padding: 2px;
+}
+
+/* Standard Text Areas */
+QTextEdit, QDialog QTextEdit {
+    font-family: 'Cascadia Code', 'Courier New', Courier, monospace;
+    font-weight: 400;
+    font-size: 14px;
+    background-color: #000000;
+    color: #e0e0e0;
+    border: none;
+    padding: 2px;
+}
+
+/* Main Window */
+QMainWindow {
+    background-color: #000000;
+    border: none;
+}
+
+/* General Widgets (Central Area) */
+QWidget {
+    background-color: #000000;
+    border: none;
+}
+
+/* Tab Container */
+QTabWidget::pane {
+    background: #000000;
+    border: none;
+}
+
+/* Tab Items */
+QTabBar::tab {
+    background: #000000;
+    color: #e0e0e0;
+    padding: 5px 10px;
+    border: 1px solid #000000;
+}
+
+/* Selected Tab */
+QTabBar::tab:selected {
+    background: #000000;
+}
+
+/* Hover Tab */
+QTabBar::tab:hover {
+    background: #080808;
+}
+
+/* Status Bar */
+QStatusBar {
+    background-color: #000000;
+    color: #bbbbbb;
+    border: none;
+}
+
+/* Menu Bar */
+QMenuBar {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+}
+
+/* Menu Bar Items */
+QMenuBar::item {
+    background: transparent;
+    padding: 5px 10px;
+}
+
+/* Menu Bar Item Hover */
+QMenuBar::item:selected {
+    background: #222222;
+}
+
+/* Buttons */
+QPushButton, QDialog QPushButton {
+    background: #111111;
+    border: 1px solid #333333;
+    color: #ffffff;
+    padding: 5px 10px;
+}
+
+/* Button Hover */
+QPushButton:hover, QDialog QPushButton:hover {
+    background-color: #222222;
+}
+
+/* Line Edits */
+QLineEdit, QDialog QLineEdit {
+    border: 1px solid #333333;
+    padding: 3px;
+    background-color: #000000;
+    color: #e0e0e0;
+}
+
+/* Line Edit Focus */
+QLineEdit:focus, QDialog QLineEdit:focus {
+    border-color: #66aaff;
+}
+
+/* File Explorer Sidebar */
+QDockWidget {
+    background-color: #000000;
+    border: none;
+}
+
+QTreeView {
+    font-size: 12px;
+    background-color: #000000;
+    color: #dddddd;
+}
+
+/* Dropdown & Context Menus */
+QMenu {
+    background-color: #111111;   /* Dark grey, not pure black */
+    color: #e0e0e0;              /* Visible text */
+    border: 1px solid #222222;   /* Optional subtle border */
+}
+
+QMenu::item:selected {
+    background-color: #333333;   /* Highlight on hover */
+    color: #ffffff;              /* Bright text when selected */
+}
+
+/* Scrollbar Base Style */
+QScrollBar:vertical, QScrollBar:horizontal {
+    background: #101010;        /* Dark grey track */
+    border: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Scrollbar Handle (Thumb) */
+QScrollBar::handle:vertical,
+QScrollBar::handle:horizontal {
+    background: #ffffff;        /* White handle */
+    border-radius: 5px;
+    min-height: 20px;
+    min-width: 20px;
+}
+
+/* Scrollbar Buttons (not needed) */
+QScrollBar::add-line,
+QScrollBar::sub-line {
+    background: none;
+    border: none;
+    width: 0px;
+    height: 0px;
+}
+
+/* Corners between horizontal and vertical scrollbars */
+QScrollBar::corner {
+    background: #101010;
+}
+
+/* File Explorer Sidebar */
+QDockWidget {
+    background-color: #000000;
+    color: #e0e0e0;
+    border: none;
+}
+
+/* Tree view inside sidebar */
+QTreeView {
+    background-color: #000000;
+    color: #e0e0e0;
+    border: none;
+}
+
+/* Status Bar at the bottom */
+QStatusBar {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+}
+
+/* --- SCROLLBARS --- */
+
+/* General scrollbar style */
+QScrollBar:horizontal, QScrollBar:vertical {
+    background-color: #111111;    /* dark track */
+    border: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Handle (thumb) */
+QScrollBar::handle:horizontal, QScrollBar::handle:vertical {
+    background-color: #ffffff;    /* white thumb */
+    border-radius: 5px;
+    min-height: 20px;
+    min-width: 20px;
+}
+
+/* Remove buttons */
+QScrollBar::add-line, QScrollBar::sub-line {
+    background: none;
+    border: none;
+    width: 0px;
+    height: 0px;
+}
+
+/* Scrollbar corner (bottom-right) */
+QScrollBar::corner {
+    background-color: #111111;
+}
+
+
+/* --- SIDEBAR FILE LIST --- */
+
+QDockWidget {
+    background-color: #000000;
+    color: #e0e0e0;
+    border: none;
+}
