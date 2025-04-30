@@ -16,7 +16,7 @@ Made for Windows 11.
 ## Installation
 Download the source code.
 To compile from source, make sure you have Python 3.12.4, and Nuitka. Install the necessary dependencies from `requirements.txt`, then run `build.bat`.
-Copy and paste 'ctstyle.css' on C:/Users/(your user)
+Copy and paste `ctstyle.css` on C:/Users/(your user)
 
 ## Screenshots
 
