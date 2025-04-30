@@ -2,7 +2,7 @@
   <img src="banner.png" alt="Banner" width="800">
 </p>
 
-> [!DISCLAIMER]
+> DISCLAIMER
 > This Black Theme is a work in progress, it's NOT finished yet, so you might find some issues.
 > I plan on making it a plugin for the program (so you actually can use it with no issues).
 
