@@ -3,6 +3,7 @@
 </p>
 
 > [!NOTE]
+> This Black Theme is a work in progress, it's NOT finished yet, so you might find some issues.
 > All of our free software is designed to respect your privacy, while being as simple to use as possible. Our free software is licensed under the [BSD-3-Clause license](https://ravendevteam.org/files/BSD-3-Clause.txt). By using our software, you acknowledge and agree to the terms of the license.
 
 Simple, fast, and professional code editor.
@@ -10,9 +11,9 @@ Simple, fast, and professional code editor.
 Made for Windows 11.
 
 ## Installation
-You can download Construct [here](https://ravendevteam.org/software/construct).
-
+Download the source code.
 To compile from source, make sure you have Python 3.12.4, and Nuitka. Install the necessary dependencies from `requirements.txt`, then run `build.bat`.
+Copy and paste 'ctstyle.css' on C:/Users/(your user)
 
 ## Screenshots
 
