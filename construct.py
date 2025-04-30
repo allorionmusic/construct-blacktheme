@@ -15,7 +15,7 @@ from PyQt5.QtWidgets import (
     QTextEdit, QDockWidget, QTreeView, QWidget, QTabWidget
 )
 from PyQt5.QtCore import QThread, pyqtSignal, Qt, QSettings, QModelIndex
-from PyQt5.QtGui import QIcon, QFont, QFontMetrics, QColor, QFontDatabase
+from PyQt5.QtGui import QIcon, QFont, QFontMetrics, QColor, QFontDatabase, QPalette
 from PyQt5.Qsci import QsciScintilla, QsciLexerPython, QsciLexerHTML, QsciLexerCPP
 try:
     from PyQt5.Qsci import QsciLexerJavaScript
@@ -89,6 +89,21 @@ def load_plugins(app_context):
                 print(f"Failed to load plugin '{filename}' from {plugins_dir}: {e}")
     return loaded_plugins
 
+def apply_dark_theme_to_lexer(lexer):
+    """Apply dark background and light text to a lexer."""
+    if lexer:
+        lexer.setDefaultPaper(QColor("#000000"))  # Background color
+        lexer.setDefaultColor(QColor("#e0e0e0"))  # Text color
+        try:
+            count = lexer.styleCount()
+        except AttributeError:
+            count = 128  # Default if styleCount fails
+        for style in range(count):
+            try:
+                lexer.setPaper(QColor("#000000"), style)
+                lexer.setColor(QColor("#e0e0e0"), style)
+            except Exception:
+                break
 
 
 """ Utility function to set the code editor font """
@@ -160,6 +175,13 @@ class FileHandler(QThread):
 class CodeEditor(QsciScintilla):
     def __init__(self, parent=None):
         super().__init__(parent)
+        self.setStyleSheet("""
+                           QScrollBar:vertical, QScrollBar:horizontal 
+                           {background-color: #111111; border: none; margin: 0px;}
+                           QScrollBar::handle:vertical, QScrollBar::handle:horizontal {background-color: #ffffff; border-radius: 5px; min-height: 20px; min-width: 20px;}
+                           QScrollBar::add-line, QScrollBar::sub-line {background: none; border: none; width: 0px; height: 0px;}
+                           QScrollBar::corner {background: #111111;} 
+                           """)
         self.preferred_font = get_preferred_font()
         self.setFont(self.preferred_font)
         self.setMarginsFont(self.preferred_font)
@@ -257,6 +279,8 @@ class CodeEditor(QsciScintilla):
                         break
             self.setLexer(lexer)
             self.lexer = lexer
+            apply_dark_theme_to_lexer(lexer)
+
         else:
             self.setLexer(None)
         return lexer
@@ -614,7 +638,13 @@ class ConstructWindow(QMainWindow):
         new_tab = EditorTab()
         self.tabWidget.addTab(new_tab, "Untitled")
         self.tabWidget.setCurrentWidget(new_tab)
+        lexer = QsciLexerCPP()  # Or QsciLexerPython() if you prefer
+        lexer.setDefaultFont(get_preferred_font())
+        new_tab.editor.setLexer(lexer)
+        apply_dark_theme_to_lexer(lexer)
+        new_tab.editor.lexer = lexer  # <- Update the editor's lexer reference
         self.updateStatusBar()
+
 
     def openFolder(self):
         folder = QFileDialog.getExistingDirectory(self, "Open Folder")
@@ -633,6 +663,15 @@ class ConstructWindow(QMainWindow):
             if self.fileTreeDock is None:
                 self.fileTreeDock = QDockWidget("File Explorer", self)
                 self.fileTreeView = QTreeView(self.fileTreeDock)
+                self.fileTreeView.setAutoFillBackground(True)
+
+                palette = QPalette()
+                palette.setColor(QPalette.Base, QColor("#000000"))              # Background of the list
+                palette.setColor(QPalette.Text, QColor("#e0e0e0"))              # Normal file text
+                palette.setColor(QPalette.Highlight, QColor("#333333"))         # Selected background
+                palette.setColor(QPalette.HighlightedText, QColor("#ffffff"))  # Selected text
+                self.fileTreeView.setPalette(palette)
+
                 from PyQt5.QtWidgets import QFileSystemModel
                 self.fileModel = QFileSystemModel()
                 self.fileModel.setRootPath(folder)
