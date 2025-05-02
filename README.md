@@ -14,8 +14,7 @@ Simple, fast, and professional code editor.
 Made for Windows 11.
 
 ## Installation
-Download the source code.
-To compile from source, make sure you have Python 3.12.4, and Nuitka. Install the necessary dependencies from `requirements.txt`, then run `build.bat`.
+Download the source code. To do it, open the Windows Command Prompt, change the directory to a comfortable one for you, example: `cd C:/(YourUserHere)/Documents` or `cd Documents` create a new folder there by simply going in the explorer and creating, you can also run `mkdir foldername`, then install [Git](https://git-scm.com/downloads) and run `git clone https://github.com/allorionmusic/construct-blacktheme`. Make sure you have Python 3.12.4, and Nuitka. Install the necessary dependencies from `requirements.txt`, open your cmd simply run `pip install -r requirements.txt` then run `build.bat`.
 Copy and paste `ctstyle.css` on C:/Users/(your user)
 
 ## Screenshots
